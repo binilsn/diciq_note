@@ -2,7 +2,6 @@ import { Paper } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import "trix/dist/trix.css";
 import Trix from 'trix'
-import "trix/dist/trix.umd";
 
 const AppEditor = () => {
 	const [data, setData] = useState(localStorage.getItem("diciq-note"));

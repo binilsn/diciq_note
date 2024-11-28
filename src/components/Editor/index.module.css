@@ -1,0 +1,17 @@
+#container {
+	height: 85vh;
+	width: 100%;
+}
+
+#diciq-editor {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	font-size:2rem;
+	height: 100%;
+	width: 100%;
+  outline: transparent;
+	border-radius: 4px;
+	resize: none;
+  box-sizing: border-box;
+  padding: 8px;
+	font-family: 'hack';
+}

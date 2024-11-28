@@ -19,8 +19,6 @@ export default function useTransform() {
 	};
 
 	const decrypt = (data = "") => {
-		console.log(getKey());
-
 		if (data == null || data.length == 0) return "";
 		const bytes = CryptoJS.AES.decrypt(data, getKey());
 		const plainText = bytes.toString(CryptoJS.enc.Utf8);

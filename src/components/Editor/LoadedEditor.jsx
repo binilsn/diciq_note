@@ -6,6 +6,7 @@ import { Slate, withReact, Editable } from "slate-react";
 import { createEditor } from "slate";
 import Toolbar from "./Toolbar";
 import Leaf from "./Leaf";
+const EDITOR_KEY = "diciq-note-plus";
 const initialValue = [
 	{
 		type: "paragraph",
@@ -19,16 +20,12 @@ const AppLoadedEditor = () => {
 	const { control, getValues } = useForm({
 		defaultValues: {
 			notePlus:
-				JSON.parse(decrypt(localStorage.getItem("diciq-note-plus"))) ||
-				initialValue,
+				JSON.parse(decrypt(localStorage.getItem(EDITOR_KEY))) || initialValue,
 		},
 	});
 
 	const handleNoteChange = () =>
-		localStorage.setItem(
-			"diciq-note-plus",
-			encrypt(JSON.stringify(getValues("notePlus")))
-		);
+		localStorage.setItem(EDITOR_KEY, encrypt(getValues("notePlus")));
 
 	return (
 		<main id={styles.container}>

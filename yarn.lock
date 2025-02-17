@@ -1977,7 +1977,7 @@ side-channel@^1.0.4, side-channel@^1.0.6:
     get-intrinsic "^1.2.4"
     object-inspect "^1.13.1"
 
-slate-dom@>=0.110.2:
+slate-dom@^0.112.2, slate-dom@>=0.110.2:
   version "0.112.2"
   resolved "https://registry.npmjs.org/slate-dom/-/slate-dom-0.112.2.tgz"
   integrity sha512-cozITMlpcBxrov854reM6+TooiHiqpfM/nZPrnjpN1wSiDsAQmYbWUyftC+jlwcpFj80vywfDHzlG6hXIc5h6A==

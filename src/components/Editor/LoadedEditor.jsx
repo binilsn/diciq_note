@@ -18,12 +18,18 @@ const AppLoadedEditor = () => {
 	const { encrypt, decrypt } = useTransform();
 	const { control, getValues } = useForm({
 		defaultValues: {
-			notePlus: decrypt(localStorage.getItem("diciq-note-plus")) || initialValue,
+			notePlus:
+				JSON.parse(
+					decrypt(JSON.parse(localStorage.getItem("diciq-note-plus")))
+				) || initialValue,
 		},
 	});
 
 	const handleNoteChange = () =>
-		localStorage.setItem("diciq-note-plus", encrypt(getValues("notePlus")));
+		localStorage.setItem(
+			"diciq-note-plus",
+			encrypt(JSON.stringify(getValues("notePlus")))
+		);
 
 	return (
 		<main id={styles.container}>

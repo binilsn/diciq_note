@@ -15,7 +15,7 @@ export default function useTransform() {
 
 	const encrypt = (data = []) => {
 		if (data == null || data.length == 0) return [];
-		const sanitizeData = JSON.stringify(data);
+		const sanitizeData = (data);
 		const cipherText = CryptoJS.AES.encrypt(sanitizeData, getKey()).toString();
 		return cipherText;
 	};
@@ -24,7 +24,7 @@ export default function useTransform() {
 		if (data == undefined) return;
 		const bytes = CryptoJS.AES.decrypt(data, getKey());
 		const plainText = bytes.toString(CryptoJS.enc.Utf8);
-		return JSON.parse(plainText);
+		return (plainText);
 	};
 
 	return { decrypt: decrypt, encrypt: encrypt };

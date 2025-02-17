@@ -13,8 +13,8 @@ export default function useTransform() {
 		return key;
 	};
 
-	const encrypt = (data = []) => {
-		if (data == null || data.length == 0) return [];
+	const encrypt = (data) => {
+		if (data == null || data.length == 0) return;
 		const sanitizeData = (data);
 		const cipherText = CryptoJS.AES.encrypt(sanitizeData, getKey()).toString();
 		return cipherText;

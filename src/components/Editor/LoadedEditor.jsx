@@ -17,15 +17,18 @@ const AppLoadedEditor = () => {
 	const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
 	const [editor] = useState(() => withReact(createEditor()));
 	const { encrypt, decrypt } = useTransform();
+	const defaultVal = decrypt(localStorage.getItem(EDITOR_KEY));
 	const { control, getValues } = useForm({
 		defaultValues: {
-			notePlus:
-				JSON.parse(decrypt(localStorage.getItem(EDITOR_KEY))) || initialValue,
+			notePlus: defaultVal ? JSON.parse(defaultVal) : initialValue,
 		},
 	});
 
 	const handleNoteChange = () =>
-		localStorage.setItem(EDITOR_KEY, encrypt(getValues("notePlus")));
+		localStorage.setItem(
+			EDITOR_KEY,
+			encrypt(JSON.stringify(getValues("notePlus")))
+		);
 
 	return (
 		<main id={styles.container}>

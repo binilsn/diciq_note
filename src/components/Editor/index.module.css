@@ -5,13 +5,14 @@
 
 #diciq-editor {
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	background: #fff;
 	font-size: 1.5rem;
 	height: 100%;
 	width: 100%;
-  outline: transparent;
+	outline: transparent;
 	border-radius: 4px;
 	resize: none;
-  box-sizing: border-box;
-  padding: 8px;
-	font-family: 'hack';
+	box-sizing: border-box;
+	padding: 8px;
+	font-family: "hack";
 }

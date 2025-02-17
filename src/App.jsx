@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "./App.css";
 import AppEditor from "./components/Editor";
 import { useEffect, useState } from "react";
@@ -23,15 +23,6 @@ function App() {
 				justifyContent="center"
 				padding={2}
 			>
-				<Typography
-					variant="h4"
-					fontWeight="bold"
-					textAlign="center"
-					color="#FFFFFF"
-					m={2}
-				>
-					Notepad
-				</Typography>
 				<AppEditor />
 			</Box>
 		);

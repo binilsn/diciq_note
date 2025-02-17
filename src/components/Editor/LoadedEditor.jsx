@@ -19,9 +19,8 @@ const AppLoadedEditor = () => {
 	const { control, getValues } = useForm({
 		defaultValues: {
 			notePlus:
-				JSON.parse(
-					decrypt(JSON.parse(localStorage.getItem("diciq-note-plus")))
-				) || initialValue,
+				JSON.parse(decrypt(localStorage.getItem("diciq-note-plus"))) ||
+				initialValue,
 		},
 	});
 
